@@ -1,0 +1,491 @@
+@font-face {
+  font-family: "robotoregular";
+  src: url("/fonts/roboto-regular-webfont.woff2") format("woff2"), url("/fonts/roboto-regular-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+$Colors: (
+  primary: #797979,
+  secondary: #ff7008,
+  tetiary: #e5e5e5,
+  tetiary-light: #f8f8f8
+);
+
+@function color($colors) {
+  @return map-get($map: $Colors, $key: $colors);
+}
+
+$padding: 1.2em;
+$imgHeight: 30px;
+$margin-left: 5%;
+$width: 90%;
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  font-family: "robotoregular";
+}
+
+h1,
+h2,
+h4,
+p,
+ul {
+  padding: 0;
+  margin: 0;
+}
+
+$desktop: 840px;
+
+@mixin desktop {
+  @media (min-width: #{$desktop}) {
+    @content;
+  }
+}
+
+.active {
+  display: block;
+}
+
+header {
+  height: 400px;
+  background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../img/tunch.jpeg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 100%;
+  background-color: color(tetiary-light);
+
+  @include desktop {
+    height: 590px;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  nav {
+    height: 100%;
+    width: 100%;
+    position: relative;
+
+    .nav {
+      display: flex;
+      flex-direction: row;
+      background: color(tetiary);
+
+      @include desktop {
+        background: transparent;
+      }
+
+      #ul {
+        display: none;
+
+        @include desktop {
+          display: inline-block;
+          list-style: none;
+          width: 50%;
+        }
+
+        ul {
+          margin: 1.9em 0;
+        }
+
+        li {
+          list-style: none;
+          display: inline-block;
+          text-align: center;
+          padding-top: 1.2em;
+        }
+
+        a {
+          text-decoration: none;
+          padding: 0.5em 0;
+          margin: 1em;
+          color: #fff;
+        }
+
+        a:hover {
+          border-bottom-width: initial;
+          border-bottom: 2px solid #ff7008;
+        }
+
+        a:active {
+          color: color(secondary);
+        }
+      }
+    }
+
+    #logo {
+      width: 50%;
+      margin: 1em;
+
+      @include desktop {
+        margin: 2.5em;
+        margin-left: $margin-left;
+      }
+
+      img {
+        height: $imgHeight;
+
+        @include desktop {
+          height: 50px;
+          margin-left: 1.5em;
+        }
+      }
+    }
+
+    #bars {
+      width: 50%;
+      text-align: right;
+      font-size: 1em;
+      margin: 1.5em;
+      cursor: pointer;
+
+      @include desktop {
+        display: none;
+      }
+    }
+  }
+
+  #sm {
+    list-style: none;
+    background: color(tetiary-light);
+    text-align: center;
+    display: none;
+    width: 100%;
+    position: absolute;
+
+    li {
+      list-style: none;
+      display: block;
+      padding: 2px;
+      margin-bottom: 1.5em;
+      cursor: pointer;
+      text-align: center;
+      border-bottom: 1px solid color(secondary);
+
+      @include desktop {
+        display: inline;
+        background: transparent;
+        border-bottom: 0;
+        text-align: left;
+      }
+    }
+
+    #contact {
+      margin-bottom: 0;
+    }
+
+    #top {
+      padding-top: 1.5em;
+    }
+
+    a {
+      text-decoration: none;
+      padding: $padding;
+      color: color(secondary);
+    }
+  }
+
+  .section-two {
+    width: $width;
+    margin-top: 10vh;
+    margin-left: $margin-left;
+
+    @include desktop {
+      margin-top: 1em;
+      width: 25%;
+      margin-left: 55%;
+    }
+
+    img {
+      height: 30%;
+    }
+
+    h1 {
+      padding: 0.5em 0;
+      font-size: 1em;
+      color: color(tetiary-light);
+
+      @include desktop {
+        font-size: 3vh;
+      }
+
+      p {
+        color: color(secondary);
+      }
+    }
+
+    p {
+      font-size: 0.8em;
+      color: color(tetiary-light);
+
+      @include desktop {
+        font-size: 0.9em;
+      }
+    }
+  }
+}
+
+#content {
+  width: $width;
+  margin-left: $margin-left;
+
+  @include desktop {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  span {
+    display: none;
+  }
+
+  #logos {
+    @include desktop {
+      width: 100%;
+      height: 100px;
+      background: color(tetiary);
+
+      #logowrapper {
+        width: 90%;
+        height: 100px;
+        position: absolute;
+        left: 5%;
+        display: flex;
+        flex-direction: row;
+
+        span {
+          display: block;
+          width: 12.5%;
+          text-align: center;
+          padding-top: 38px;
+        }
+
+        div {
+          width: 12%;
+          align-content: center;
+          align-items: center;
+          height: 100px;
+        }
+      }
+    }
+  }
+
+  #allwrapper {
+    width: 100%;
+    margin-bottom: 30vh;
+
+    #all_features_header {
+      background-color: color(tetiary);
+      line-height: 4vh;
+      padding: 1.5vh 0;
+      margin-bottom: 5vh;
+
+      h4 {
+        color: color(secondary);
+        font-size: 4vh;
+        text-align: center;
+
+        @include desktop {
+          font-size: 4vh;
+        }
+      }
+
+      h2 {
+        font-size: 2.5vh;
+        text-align: center;
+      }
+    }
+
+    .all_features {
+      text-align: center;
+      padding: $padding;
+
+      h2 {
+        font-size: 3.5vh;
+      }
+
+      p {
+        color: color(primary);
+        font-size: 0.8em;
+        line-height: 2.5vh;
+
+        @include desktop {
+          margin-top: 0.3em;
+          font-size: 0.9em;
+          line-height: 3vh;
+        }
+      }
+
+      @include desktop {
+        padding: 0;
+        text-align: left;
+        margin-bottom: 3em;
+        width: 100%;
+        padding: 0 1em 0 1.5em;
+        margin-top: 2em;
+      }
+
+      .one {
+        height: 300%;
+        width: 100%;
+
+        background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url("../img/fam.jpeg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        border-radius: 5px;
+      }
+
+      .two {
+        height: 300%;
+        width: 100%;
+
+        background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url("../img/re.jpeg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        border-radius: 5px;
+      }
+
+      .three {
+        height: 300%;
+        width: 100%;
+
+        background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url("../img/l.jpeg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        border-radius: 5px;
+      }
+    }
+  }
+
+  @include desktop {
+    #grid {
+      display: flex;
+      flex-direction: row;
+      padding-bottom: 20vh;
+
+      p {
+        width: 80%;
+      }
+    }
+  }
+}
+
+footer {
+  display: none;
+
+  @include desktop {
+    display: block;
+    width: 100%;
+    background: color(tetiary-light);
+    font-size: 1.1em;
+    margin-top: 20vh;
+
+    #footer_wrapper {
+      height: 400px;
+      width: 100%;
+      margin-top: 100px;
+
+      #top {
+        width: 90%;
+        margin-left: 5%;
+        display: flex;
+        flex-direction: row;
+        padding-bottom: 4em;
+        padding-top: 5em;
+
+        .all {
+          width: 50%;
+
+          h2 {
+            font-size: 1em;
+            margin-bottom: 0.7em;
+          }
+
+          ul {
+            list-style: none;
+            a {
+              text-decoration: none;
+              font-size: 0.8em;
+              color: #797979;
+            }
+          }
+
+          p {
+            font-size: 0.8em;
+            color: #797979;
+          }
+        }
+
+        #get_started {
+          margin-left: 2.3em;
+        }
+
+        #news {
+          p {
+            b {
+              color: color(secondary);
+            }
+          }
+
+          input {
+            padding: 0.7em;
+            border-top-left-radius: 4px;
+            border-bottom-left-radius: 4px;
+            border: none;
+            border: 2px solid #e1e1e1;
+          }
+
+          button {
+            margin-top: 1.4em;
+            padding: 0.84em;
+            margin-left: -0.4em;
+            border: none;
+            width: 80px;
+            border-top-right-radius: 4px;
+            border-bottom-right-radius: 4px;
+            color: white;
+            background-color: color(secondary);
+          }
+        }
+      }
+    }
+
+    #border {
+      width: 85%;
+      height: 1px;
+      margin-left: 7.5%;
+      border-bottom: 0.5px solid #e1e1e1;
+    }
+  }
+
+  #bottom {
+    div {
+      width: 100%;
+      margin-bottom: 10px;
+
+      ul {
+        width: 90%;
+        margin-left: 7%;
+        list-style: none;
+        padding-top: 10px;
+
+        li {
+          display: inline;
+          margin-left: 0.5em;
+        }
+      }
+
+      p {
+        font-size: 2.5vh;
+        margin-left: 7.5%;
+        color: #797979;
+
+        b {
+          color: color(secondary);
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Test</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+</head>
+<body>
+    <header>
+        <nav>
+            <section class="nav">
+                <div id="logo">
+                    <img src="./img/logos/Group 2.png"/>
+                </div>
+
+                <div id="bars">
+                    <i class="fa fa-bars menu" aria-hidden="true"></i>
+                </div>
+
+                <div id="ul">
+                    <ul>
+                        <li id="top">
+                            <a href="#">Home</a>
+                        </li>
+                        <li>
+                            <a href="#">About Me</a>
+                        </li>
+                        <li id="contact">
+                            <a href="#">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+                
+            </section>
+
+            <ul id="sm">
+                <li id="top">
+                    <a href="#">Home</a>
+                </li>
+                <li>
+                    <a href="#">About Me</a>
+                </li>
+                <li id="contact">
+                    <a href="#">Contact</a>
+                </li>
+            </ul>
+         
+            <section class="section-two">
+                <img src="./img/logos/Group.png"/>
+                <h1>To encourage, engage and <br/>equip others to believe in the<p>possibilities.</p></h1>
+                <p>
+                    <span class="span">Sporty Look: </span> 
+                    <br/>
+                     As much as i love to work hard and achieve set goals, I always try to look good and sporty.</p>
+
+             
+            </section>
+        </nav>
+    </header>
+
+    <div id="content">
+
+        <div id="allwrapper">
+            <div id="all_features_header">
+                <h4>Passion</h4>
+                <h2 id="feat">Being confident by my judgement and decision</h2>
+            </div>
+
+            <div id="grid">       
+                
+                <div class="all_features">
+                    <div id="img_wrap" class="one"></div>
+                    <h2>Family</h2>
+                    <p>She happen to be the best sister amongst three. And I will do everything I can to make her happy regardless of her fault. Family always and forever we the code</p>
+                </div>
+
+                <div class="all_features">
+                        <div id="img_wrap" class="two"></div>
+                        <h2>Friendship</h2>
+                        <p>True friends are tested by real situations and over time they have proven to be a good one and simply shows there are till good friends around us.</p>
+                    </div>
+
+                <div class="all_features">
+                    <div id="img_wrap" class="three"></div>
+                    <h2>Love</h2>
+                    <p>Get curated content and design inspiration delivered straight to your inbox</p>
+                </div>
+            </div>
+            
+        </div>
+    <div>
+
+    <footer>
+        <div id="footer_wrapper">
+            <div id="top">
+                <div class="all" id="get_started">
+                    <h2>Okonkwo Emmanuel Tochukwu </h2>
+                    <p>
+                        Is a young dedicated and hard-working individual. A graduate of business administration from University of Nigeria NSUKKA, Also a diploma holder from the prestigious college of technology (YABATECH). I have a strong interest in technology and skill acquisition. Presently am on a self development course in programming and App development. Notable I posses a 5years working experience in different industries like Real estate, Telecommunication, Media Advert, Hospitality and the banking sector.
+                    </p>
+                </div>
+                
+                
+            </div>
+            <div id="border"></div>
+
+            <div id="bottom">
+                <div>
+                    <p>Contact Me: 08146305353</p>
+                    <ul>
+                        <li><a href="#"><img src="./img/social/instagram-logo.png"/></a></li>
+                        <li><a href="#"><img src="./img/social/facebook.png"/></a></li>
+                        <li><a href="#"><img src="./img/social/twitter.png"></a></li>
+                    </ul>
+
+                </div>
+                
+                
+            </div>
+        </div>
+    </footer> 
+
+
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('.menu').click(function(){
+                console.log("hello")
+                $('ul').slideToggle('active');
+            })
+
+            //TODO: Add Zooming for pictures
+        })
+    </script>
+</body>
+</html>
